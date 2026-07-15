@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './src/pages/loginScreen';
 import MainScreen from './src/pages/Main';
+import CardPricesScreen from './src/cards';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,11 @@ export default function App() {
         <Stack.Screen
           name="Main"
           component={MainScreen}
+        />
+
+        <Stack.Screen
+          name="cards"
+          component={CardPricesScreen}
         />
 
       </Stack.Navigator>

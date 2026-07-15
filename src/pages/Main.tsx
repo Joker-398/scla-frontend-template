@@ -1,10 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Button } from 'react-native';
 
-export default function MainScreen() {
+
+export default function MainScreen({navigation}: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Card shop list</Text>
+      <View style={styles.buttonWrapper}>
+        <Button
+          title="Check card prices"
+          onPress={() => navigation.navigate('cards')}
+        />
+      </View>
       <Image source={{ uri: "https://lh3.googleusercontent.com/grass-cs/ACvplmNwtbiohsGe6zkYKId7BkOrwR8AluoOZ5z4v0FhDHeZVimI2WadTdTd11t_fHOJTu5hLJpvJVgIvBxvrjgUF2jceuiuviDC6sxuxxMIzxgxOgIggNyV81EjFmLvRxdCcdjOhA3Oig=s294-w294-h220-n-k-no" }} style={styles.Image} />
       <View style={styles.buttonWrapper}>
         <Button
