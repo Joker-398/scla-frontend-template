@@ -7,6 +7,13 @@ export default function LoginScreen({ navigation }: any) {
       <Text style={styles.title}>Login Page</Text>
       <View style={styles.buttonWrapper}>
         <Button
+            title="Login with Google"
+        />
+      </View>
+
+
+      <View style={styles.buttonWrapper}>
+        <Button
           title="Go to Main page"
           onPress={() => navigation.navigate('Main')}
         />
@@ -29,10 +36,11 @@ const styles = StyleSheet.create({
   },
   buttonWrapper: {
     borderWidth: 1,
-    borderColor: '#007AFF',
+    borderColor: '#1577e0',
     borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 8,
     backgroundColor: '#f5f9ff',
+    marginBottom: 16,
   },
 });
