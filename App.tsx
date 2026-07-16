@@ -1,22 +1,26 @@
 import React from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import { Button, StyleSheet, View, Text } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './src/pages/loginScreen';
 import MainScreen from './src/pages/Main';
-import CardPricesScreen from './src/cards';
+import CardPricesScreen from './src/cardPrices';
+import ShopsScreen from './src/shops';
 
 const Stack = createNativeStackNavigator();
 
 function HomeScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
+      <Text style={styles.tittle}>Welcome to our app!</Text>
+      <View style={styles.buttonWrapper}>
       <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('Login')}
-      />
+      title="Go to Login" 
+      onPress={() => navigation.navigate('Login')}
+       />
+      </View>
     </View>
   );
 }
@@ -42,7 +46,11 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="cards"
+          name="shops"
+          component={ShopsScreen}
+        />
+        <Stack.Screen
+          name="CardPrices"
           component={CardPricesScreen}
         />
 
@@ -56,5 +64,19 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:'center',
     alignItems:'center',
+  },
+  tittle: {
+    fontSize:30,
+    fontWeight:'bold',
+  },
+  buttonWrapper: {
+    borderWidth: 1,
+    borderColor: '#1577e0',
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    backgroundColor: '#f5f9ff',
+    marginBottom: 10,
+    marginTop: 50,
   },
 });
